@@ -1,8 +1,10 @@
 import React from 'react';
+import AuthenticationPage from '../../features/authentication/AuthenticationPage';
+import { AUTHENTICATION_FORM_TYPE } from '../utilities/enums';
 
 function App() {
   return (
-    <h1>Hello World!</h1>
+    < AuthenticationPage authenticationFormType={AUTHENTICATION_FORM_TYPE.LOGIN} />
   );
 }
 
