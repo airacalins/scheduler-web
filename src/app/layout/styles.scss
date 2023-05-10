@@ -1,0 +1,55 @@
+:root {
+    --lightPrimary: #edf6f9;
+    --primary: #14213d;
+    --primaryButtonHover: #1d3557;
+    --secondary: #ee9b00;
+    --white: white;
+}
+
+.bg__primary {
+    background-color: var(--primary);
+}
+
+.btn__primary {
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 4px;
+    border-color: transparent;
+}
+
+.btn__primary:hover {
+    background-color: var(--primaryButtonHover);
+}
+
+.color__primary {
+    color: var(--primary);
+}
+
+.color__secondary {
+    color: var(--secondary);
+}
+
+.object-fit__cover {
+    object-fit: cover;
+}
+
+textarea,
+textarea.form-control,
+input.form-control,
+input[type=text].form-control,
+input[type=password].form-control,
+input[type=email].form-control,
+input[type=number].form-control,
+input[type=text].form-control,
+input[type=password].form-control,
+input[type=email].form-control,
+input[type=tel].form-control {
+    background-color: var(--lightPrimary);
+    border-color: transparent;
+
+    &:focus {
+        background-color: var(--lightPrimary);
+        border: 1px solid #14213d;
+        box-shadow: none;
+    }
+}

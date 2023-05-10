@@ -18,7 +18,7 @@ const FormGroup = ({ onChange, title, placeholder, type, value, className, margi
   const [isInputEmpty, setIsInputEmpty] = useState<boolean>(false);
 
   return (
-    <div className={`${margin} ${className} ${width}`}>
+    <div className={`${margin} ${className} ${width} `}>
       <Form.Group>
         {
           title && <Form.Label>{title}</Form.Label>
