@@ -1,6 +1,11 @@
 // App
 export const APP_BASE_URL = "http://localhost:3000/api"
 
+// API
+export const CURRENT_USER_API = "auth";
+export const LOGIN_API = "auth/login";
+export const REGISTER_API = "auth/register";
+
 // String constants
 export const CONFIRM_PASSWORD = "Confirm Password";
 export const EMAIL = "Email";

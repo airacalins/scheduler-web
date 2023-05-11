@@ -4,6 +4,12 @@
     --primaryButtonHover: #1d3557;
     --secondary: #ee9b00;
     --white: white;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    font-family: var(--font-family);
+    letter-spacing: 0.5px;
 }
 
 .bg__primary {
@@ -64,16 +70,8 @@ input[type=tel].form-control {
 
 label {
     font-size: 14px;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 0.5px;
 
     &.label__invalid {
         color: red;
     }
-}
-
-h1,
-p {
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 0.5px;
 }

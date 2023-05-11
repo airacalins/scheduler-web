@@ -1,10 +1,10 @@
 interface Props {
-    height: string,
+    height: number,
 }
 
 const VerticalSpace = ({ height }: Props) => {
     return (
-        <div style={{ height: height }}></div>
+        <div style={{ height: `${height}px` }}></div>
     )
 }
 

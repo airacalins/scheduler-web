@@ -26,7 +26,7 @@ const AuthenticationPage = ({ authenticationFormType }: Props) => {
         <div className="w-75 m-auto d-flex flex-column align-items-center">
           <h1>{loginForm ? LOGIN : REGISTER}</h1>
 
-          <VerticalSpace height={"48px"} />
+          <VerticalSpace height={48} />
 
           <FormGroup
             title={FIRST_NAME}

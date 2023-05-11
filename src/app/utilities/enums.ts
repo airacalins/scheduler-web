@@ -1,3 +1,7 @@
+export enum SLICE_NAME {
+  USERS = "users",
+};
+
 export enum AUTHENTICATION_FORM_TYPE {
   LOGIN,
   REGISTER,
