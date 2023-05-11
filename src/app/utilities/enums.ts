@@ -19,3 +19,9 @@ export enum VARIANT {
   PRIMARY = "primary",
   DARK = "dark",
 }
+
+export enum STATUS_CODE_ERROR_MESSAGE {
+  UNAUTHORIZED = "Unauthorized",
+  FORBIDDEN = "Forbidden",
+  SERVER_ERROR = "Server Error",
+}

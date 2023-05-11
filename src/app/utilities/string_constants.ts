@@ -1,3 +1,6 @@
+// App
+export const APP_BASE_URL = "http://localhost:3000/api"
+
 // String constants
 export const CONFIRM_PASSWORD = "Confirm Password";
 export const EMAIL = "Email";
