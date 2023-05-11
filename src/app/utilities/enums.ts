@@ -10,6 +10,10 @@ export enum FORM_TYPE {
   RADIO = "radio",
 }
 
+export enum ROUTE_NAME {
+  LOGIN = "/login",
+  REGISTER = "/register",
+}
 
 export enum VARIANT {
   PRIMARY = "primary",

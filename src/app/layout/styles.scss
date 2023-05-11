@@ -52,6 +52,14 @@ input[type=tel].form-control {
         border: 1px solid #14213d;
         box-shadow: none;
     }
+
+    &.is-invalid {
+        border: 1px solid red;
+
+        &:focus {
+            border: 1px solid red;
+        }
+    }
 }
 
 label {
@@ -60,7 +68,6 @@ label {
     letter-spacing: 0.5px;
 
     &.label__invalid {
-        font-size: 14px;
         color: red;
     }
 }
