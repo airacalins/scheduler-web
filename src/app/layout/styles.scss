@@ -12,6 +12,14 @@
     letter-spacing: 0.5px;
 }
 
+.side__nav {
+    height: 100vh;
+    padding: 16px 0px;
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: column;
+}
+
 a.nav-link {
     color: white;
     padding: 16px;

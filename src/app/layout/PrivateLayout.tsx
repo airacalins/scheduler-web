@@ -7,11 +7,11 @@ const PrivateLayout = () => {
   return (
     <div className="w-100 vh-100">
       <Row>
-        <Col sm={3} className="vh-100">
+        <Col sm={2} className="vh-100">
           <SideNav />
         </Col>
 
-        <Col>
+        <Col className="m-4">
           <Outlet />
         </Col>
       </Row>

@@ -2,6 +2,8 @@ import { Nav } from "react-bootstrap";
 import { NavigationPath } from "../../models/navigation";
 import { CLIENTS, CLIENTS_ROUTE, EMPLOYEES, EMPLOYEES_ROUTE, HOME, HOME_ROUTE, SERVICES, SERVICES_ROUTE } from "../../utilities/string_constants";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { EMPTY_STRING } from "../../utilities/string_constants";
 
 export const navigationPaths: NavigationPath[] = [
   {
@@ -21,20 +23,30 @@ export const navigationPaths: NavigationPath[] = [
     title: SERVICES,
     path: SERVICES_ROUTE,
   },
-]
+];
+
 export const SideNav = () => {
+  const currentNavIndex = 0;
+  const [currentNav, setCurrentNav] = useState<number>(currentNavIndex);
+
   const navigate = useNavigate();
 
   return (
-    <Nav defaultActiveKey="/home" className="flex-column vh-100 py-2 bg__primary">
+    <Nav
+      defaultActiveKey={HOME_ROUTE}
+      className="side__nav"
+    >
       {
-        navigationPaths.map(nav => {
+        navigationPaths.map((nav, index) => {
           const { title, path } = nav;
 
           return <Nav.Link
             key={title}
-            className=""
-            onClick={() => navigate(path)}
+            className={navigationPaths[currentNav].path === path ? "active" : EMPTY_STRING}
+            onClick={() => {
+              setCurrentNav(index);
+              return navigate(path);
+            }}
           >
             {title}
           </Nav.Link>
