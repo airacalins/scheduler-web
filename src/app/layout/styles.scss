@@ -12,6 +12,22 @@
     letter-spacing: 0.5px;
 }
 
+a.nav-link {
+    color: white;
+    padding: 16px;
+    margin-left: 16px;
+
+    &.active {
+        background-color: white;
+        color: var(--primary);
+        border-radius: 8px 0px 0px 8px;
+    }
+
+    &:hover {
+        color: var(--secondary);
+    }
+}
+
 .bg__primary {
     background-color: var(--primary);
 }

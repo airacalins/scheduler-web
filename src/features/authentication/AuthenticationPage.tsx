@@ -1,8 +1,8 @@
 import { Col, Row } from "react-bootstrap";
 import FormGroup from "../../app/components/form/FormGroup";
 import VerticalSpace from "../../app/components/spacer/VerticalSpace";
-import { AUTHENTICATION_FORM_TYPE, FORM_TYPE, ROUTE_NAME } from "../../app/utilities/enums"
-import { CONFIRM_PASSWORD, EMAIL, EMPTY_STRING, FIRST_NAME, LAST_NAME, LOGIN, LOGIN_IMAGE, LOGIN_MESSAGE, PASSWORD, REGISTER, REGISTER_MESSAGE, SIGN_IN, SIGN_UP, USERNAME } from "../../app/utilities/string_constants";
+import { AUTHENTICATION_FORM_TYPE, FORM_TYPE } from "../../app/utilities/enums"
+import { CONFIRM_PASSWORD, EMAIL, EMPTY_STRING, FIRST_NAME, HOME_ROUTE, LAST_NAME, LOGIN, LOGIN_IMAGE, LOGIN_MESSAGE, LOGIN_ROUTE, PASSWORD, REGISTER, REGISTER_MESSAGE, REGISTER_ROUTE, SIGN_IN, SIGN_UP, USERNAME } from "../../app/utilities/string_constants";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { LoginUserInput, RegisterUserInput } from "../../app/store/auth/types";
@@ -39,24 +39,23 @@ const AuthenticationPage = ({ authenticationFormType }: Props) => {
   const handleSwitchForm = () => {
     if (loginForm) {
       setLoginUserInput({ ...initialLoginInput });
-      navigate(ROUTE_NAME.REGISTER);
+      navigate(REGISTER_ROUTE);
     }
     else {
       setRegisterUserInput({ ...initialRegisterInput });
-      navigate(ROUTE_NAME.LOGIN);
+      navigate(LOGIN_ROUTE);
     }
   };
 
   const handleLoginUser = async () => {
     await dispatch(loginUser(loginUserInput));
-    console.log("TODO: Handle navigation to HOME_PAGE")
+    navigate(HOME_ROUTE);
   }
 
   const handleRegisterUser = async () => {
     if (registerUserInput.password !== registerUserInput.confirmPassword) console.log("TODO: Handle toast message for PASSWORD_MISMATCH");
-    // console.log("A", registerUserInput)
     await dispatch(registerUser(registerUserInput));
-    console.log("TODO: Handle navigation to HOME_PAGE")
+    navigate(HOME_ROUTE);
   }
 
   return (
