@@ -1,14 +1,14 @@
-import { Col, Form, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import FormGroup from "../../app/components/form/FormGroup";
 import VerticalSpace from "../../app/components/spacer/VerticalSpace";
 import { AUTHENTICATION_FORM_TYPE, FORM_TYPE, ROUTE_NAME } from "../../app/utilities/enums"
-import { CONFIRM_PASSWORD, EMAIL, EMPTY_STRING, FIRST_NAME, LAST_NAME, LOGIN, LOGIN_IMAGE, LOGIN_MESSAGE, PASSWORD, PASSWORD_MISMATCH, REGISTER, REGISTER_MESSAGE, SIGN_IN, SIGN_UP } from "../../app/utilities/string_constants";
+import { CONFIRM_PASSWORD, EMAIL, EMPTY_STRING, FIRST_NAME, LAST_NAME, LOGIN, LOGIN_IMAGE, LOGIN_MESSAGE, PASSWORD, REGISTER, REGISTER_MESSAGE, SIGN_IN, SIGN_UP, USERNAME } from "../../app/utilities/string_constants";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { LoginUserInput, RegisterUserInput } from "../../app/store/auth/types";
 import { PrimaryButton } from "../../app/components/button/PrimaryButton";
 import { Center } from "../../app/components/container/Center";
-import { useAppDispatch, useAppSelector } from "../../app/store/hooks";
+import { useAppDispatch } from "../../app/store/hooks";
 import { loginUser, registerUser } from "../../app/store/auth/action";
 
 interface Props {
@@ -49,13 +49,14 @@ const AuthenticationPage = ({ authenticationFormType }: Props) => {
 
   const handleLoginUser = async () => {
     await dispatch(loginUser(loginUserInput));
-    console.log("Handle navigation to HOME_PAGE")
+    console.log("TODO: Handle navigation to HOME_PAGE")
   }
 
   const handleRegisterUser = async () => {
-    if (registerUserInput.password !== registerUserInput.confirmPassword) console.log('Handle toast message for PASSWORD_MISMATCH')
+    if (registerUserInput.password !== registerUserInput.confirmPassword) console.log("TODO: Handle toast message for PASSWORD_MISMATCH");
+    // console.log("A", registerUserInput)
     await dispatch(registerUser(registerUserInput));
-    console.log("Handle navigation to HOME_PAGE")
+    console.log("TODO: Handle navigation to HOME_PAGE")
   }
 
   return (
@@ -98,6 +99,20 @@ const AuthenticationPage = ({ authenticationFormType }: Props) => {
                   }
                 ))}
               />
+              <VerticalSpace height={16} />
+
+              <FormGroup
+                title={USERNAME}
+                type={FORM_TYPE.TEXT}
+                value={registerUserInput.userName}
+                onChange={(value) => setRegisterUserInput(prev => (
+                  {
+                    ...prev,
+                    userName: value
+                  }
+                ))}
+              />
+
               <VerticalSpace height={16} />
             </>
           }
@@ -153,10 +168,6 @@ const AuthenticationPage = ({ authenticationFormType }: Props) => {
               type={FORM_TYPE.PASSWORD}
               value={registerUserInput.confirmPassword}
               onChange={(value) => {
-                console.log('1', registerUserInput.password)
-                console.log('2', registerUserInput.confirmPassword)
-                console.log('3', registerUserInput.password !== registerUserInput.confirmPassword)
-
                 return setRegisterUserInput(prev => (
                   {
                     ...prev,

@@ -1,5 +1,5 @@
 // App
-export const APP_BASE_URL = "http://localhost:3000/api"
+export const APP_BASE_URL = "http://localhost:5138/api"
 
 // API
 export const CURRENT_USER_API = "auth";
@@ -20,6 +20,7 @@ export const REGISTER = "Register";
 export const REGISTER_MESSAGE = "Already have an account?";
 export const SIGN_IN = "Sign In";
 export const SIGN_UP = "Sign Up";
+export const USERNAME = "Username";
 
 // Image path
 export const LOGIN_IMAGE = "/images/schedule.png";
