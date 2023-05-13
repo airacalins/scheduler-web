@@ -8,17 +8,16 @@ interface Props {
   title?: string,
   placeholder?: string,
   value?: string,
+  width?: 25 | 50 | 75 | 100,
   className?: string,
-  margin?: string,
-  width?: "w-25" | "w-50" | "w-75" | "w-100",
   onChange: (value: string) => void,
 }
 
-const FormGroup = ({ onChange, title, placeholder, type, value, className, margin = "mb-3", width = "w-100" }: Props) => {
+const FormGroup = ({ onChange, title, placeholder, type, value, className, width = 100 }: Props) => {
   const [isInputEmpty, setIsInputEmpty] = useState<boolean>(false);
 
   return (
-    <div className={`${margin} ${className} ${width} `}>
+    <div className={`${className} w-${width} `}>
       <Form.Group>
         {
           title && <Form.Label>{title}</Form.Label>

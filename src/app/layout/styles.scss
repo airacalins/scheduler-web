@@ -16,15 +16,17 @@
     background-color: var(--primary);
 }
 
-.btn__primary {
+button.btn.btn__primary {
     background-color: var(--primary);
     color: var(--white);
     border-radius: 4px;
     border-color: transparent;
-}
+    width: 100%;
+    padding: 8px;
 
-.btn__primary:hover {
-    background-color: var(--primaryButtonHover);
+    &:hover {
+        background-color: var(--primaryButtonHover);
+    }
 }
 
 .color__primary {
@@ -74,4 +76,8 @@ label {
     &.label__invalid {
         color: red;
     }
+}
+
+.cursor__pointer {
+    cursor: pointer;
 }

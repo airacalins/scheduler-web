@@ -10,7 +10,7 @@ export const initialState: UsersState = {
 }
 
 export const userSlice = createSlice({
-  name: SLICE_NAME.USERS,
+  name: SLICE_NAME.AUTH,
   initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -52,7 +52,7 @@ export const userSlice = createSlice({
       }
     )
     builder.addCase(
-      loginUser.rejected,
+      registerUser.rejected,
       (state, _) => {
         state.isFetching = false;
       }

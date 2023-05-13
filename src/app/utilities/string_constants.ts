@@ -15,6 +15,7 @@ export const LAST_NAME = "Last Name";
 export const LOGIN = "Login";
 export const LOGIN_MESSAGE = "Don't have an account?";
 export const PASSWORD = "Password";
+export const PASSWORD_MISMATCH = "Confirm password is not matched";
 export const REGISTER = "Register";
 export const REGISTER_MESSAGE = "Already have an account?";
 export const SIGN_IN = "Sign In";

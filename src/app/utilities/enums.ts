@@ -1,5 +1,5 @@
 export enum SLICE_NAME {
-  USERS = "users",
+  AUTH = "auth",
 };
 
 export enum AUTHENTICATION_FORM_TYPE {
