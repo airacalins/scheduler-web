@@ -2,11 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import { SLICE_NAME } from "../../utilities/enums";
 import { fetchCurrentUser, loginUser, registerUser } from "./action";
 import { UsersState } from "./types";
-import { stat } from "fs";
 
 export const initialState: UsersState = {
   isFetching: false,
-  currentUser: undefined
+  currentUser: undefined,
 }
 
 export const userSlice = createSlice({

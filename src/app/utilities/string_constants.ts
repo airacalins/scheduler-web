@@ -3,7 +3,7 @@ export const APP_NAME = "Scheduler"
 export const APP_BASE_URL = "http://localhost:5138/api"
 
 // API
-export const CURRENT_USER_API = "auth";
+export const CURRENT_USER_API = "auth/current-user";
 export const LOGIN_API = "auth/login";
 export const REGISTER_API = "auth/register";
 

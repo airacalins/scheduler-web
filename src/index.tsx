@@ -1,12 +1,14 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { Provider } from 'react-redux';
 import App from './app/layout/App';
 import reportWebVitals from './reportWebVitals';
+import { createRoot } from 'react-dom/client';
+import { store } from './app/store/store';
+import { Provider } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
 import './app/layout/styles.css';
 import './app/layout/styles.scss';
-import { store } from './app/store/store';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-toastify/dist/ReactToastify.min.css";
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -14,6 +16,7 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
+      <ToastContainer position="top-right" hideProgressBar theme="colored" />
       <App />
     </Provider>
   </React.StrictMode>
