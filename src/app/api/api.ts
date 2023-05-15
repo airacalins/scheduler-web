@@ -1,5 +1,5 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
-import { APP_BASE_URL, EMPTY_STRING } from "../utilities/string_constants";
+import { APP_BASE_URL, APP_USER_TOKEN, EMPTY_STRING } from "../utilities/string_constants";
 import { STATUS_CODE_ERROR_MESSAGE } from "../utilities/enums";
 import { toast } from "react-toastify";
 
@@ -8,7 +8,7 @@ axios.defaults.baseURL = APP_BASE_URL;
 const responseBody = <T>(response: AxiosResponse<T>) => response.data;
 
 axios.interceptors.request.use(config => {
-  const user = localStorage.getItem("user");
+  const user = localStorage.getItem(APP_USER_TOKEN);
   const token = !!user ? JSON.parse(user).token : EMPTY_STRING;
 
   if (token) config.headers!.Authorization = `Bearer ${token}`;

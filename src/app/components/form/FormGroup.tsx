@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FORM_TYPE } from "../../utilities/enums";
 import { Form } from "react-bootstrap";
-import { EMPTY_STRING } from "../../utilities/string_constants";
+import { EMPTY_STRING, REQUIRED_FIELD_MESSAGE } from "../../utilities/string_constants";
 
 interface Props {
   type: FORM_TYPE,
@@ -35,7 +35,7 @@ const FormGroup = ({ onChange, title, placeholder, type, value, className, width
         />
         {isInputEmpty &&
           <Form.Control.Feedback type="invalid">
-            {`${title ? title : "This field"} is required`}
+            {REQUIRED_FIELD_MESSAGE(title)}
           </Form.Control.Feedback>
         }
       </Form.Group>

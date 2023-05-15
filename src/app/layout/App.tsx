@@ -1,8 +1,8 @@
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AuthenticationPage from '../../features/authentication/AuthenticationPage';
 import { AUTHENTICATION_FORM_TYPE } from '../utilities/enums';
 import { DashboardPage } from '../../features/dashboard/DashboardPage';
-import { CLIENTS_ROUTE, EMPLOYEES_ROUTE, HOME_ROUTE, LOGIN_ROUTE, REGISTER_ROUTE, SERVICES_ROUTE } from '../utilities/string_constants';
+import { BRANCHES_ROUTE, CLIENTS_ROUTE, EMPLOYEES_ROUTE, HOME_ROUTE, LOGIN_ROUTE, REGISTER_ROUTE, SERVICES_ROUTE } from '../utilities/string_constants';
 import PrivateRoute from './PrivateRoute';
 import { useCallback, useEffect, useState } from 'react';
 import { useAppDispatch } from '../store/hooks';
@@ -11,6 +11,7 @@ import LoadingPage from '../components/indicator/LoadingPage';
 import ClientsPage from '../../features/client/ClientsPage';
 import EmployeesPage from '../../features/employee/EmployeesPage';
 import { ServicesPage } from '../../features/service/ServicesPage';
+import BranchesPage from '../../features/location/LocationPage';
 
 export const App = () => {
   const [loading, setLoading] = useState(true);
@@ -20,7 +21,7 @@ export const App = () => {
   const initApp = useCallback(
     async () => {
       try {
-        if (!localStorage.getItem("user") == null) await dispatch(fetchCurrentUser());
+        await dispatch(fetchCurrentUser());
       } catch (error) {
         console.log(error);
       }
@@ -57,6 +58,11 @@ export const App = () => {
           <Route
             path={HOME_ROUTE}
             element={<DashboardPage />}
+          />
+
+          <Route
+            path={BRANCHES_ROUTE}
+            element={<BranchesPage />}
           />
 
           <Route

@@ -29,6 +29,10 @@ a.nav-link {
         background-color: white;
         color: var(--primary);
         border-radius: 8px 0px 0px 8px;
+
+        &:hover {
+            color: var(--primary);
+        }
     }
 
     &:hover {

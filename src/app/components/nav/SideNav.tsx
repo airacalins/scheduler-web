@@ -1,6 +1,6 @@
 import { Nav } from "react-bootstrap";
 import { NavigationPath } from "../../models/navigation";
-import { CLIENTS, CLIENTS_ROUTE, EMPLOYEES, EMPLOYEES_ROUTE, HOME, HOME_ROUTE, SERVICES, SERVICES_ROUTE } from "../../utilities/string_constants";
+import { BRANCHES, BRANCHES_ROUTE, CLIENTS, CLIENTS_ROUTE, EMPLOYEES, EMPLOYEES_ROUTE, HOME, HOME_ROUTE, SERVICES, SERVICES_ROUTE } from "../../utilities/string_constants";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { EMPTY_STRING } from "../../utilities/string_constants";
@@ -9,6 +9,10 @@ export const navigationPaths: NavigationPath[] = [
   {
     title: HOME,
     path: HOME_ROUTE,
+  },
+  {
+    title: BRANCHES,
+    path: BRANCHES_ROUTE,
   },
   {
     title: CLIENTS,

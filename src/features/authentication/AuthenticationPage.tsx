@@ -202,7 +202,7 @@ const AuthenticationPage = ({ authenticationFormType }: Props) => {
           <img
             className="w-75 h-75 object-fit__cover"
             src={LOGIN_IMAGE}
-            alt=""
+            alt={EMPTY_STRING}
           />
         </Center>
 
