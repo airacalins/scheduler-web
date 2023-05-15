@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import AuthenticationPage from '../../features/authentication/AuthenticationPage';
 import { AUTHENTICATION_FORM_TYPE } from '../utilities/enums';
 import { DashboardPage } from '../../features/dashboard/DashboardPage';
@@ -20,7 +20,7 @@ export const App = () => {
   const initApp = useCallback(
     async () => {
       try {
-        if (localStorage.length !== 0) await dispatch(fetchCurrentUser());
+        if (!localStorage.getItem("user") == null) await dispatch(fetchCurrentUser());
       } catch (error) {
         console.log(error);
       }
