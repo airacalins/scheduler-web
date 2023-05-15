@@ -3,7 +3,6 @@ import { NavigationPath } from "../../models/navigation";
 import { BRANCHES, BRANCHES_ROUTE, CLIENTS, CLIENTS_ROUTE, EMPLOYEES, EMPLOYEES_ROUTE, HOME, HOME_ROUTE, SERVICES, SERVICES_ROUTE } from "../../utilities/string_constants";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { EMPTY_STRING } from "../../utilities/string_constants";
 
 export const navigationPaths: NavigationPath[] = [
   {
@@ -35,6 +34,11 @@ export const SideNav = () => {
 
   const navigate = useNavigate();
 
+  const handleNavigateRoute = (index: number) => {
+    setCurrentNav(index);
+    return navigate(navigationPaths[index].path);
+  }
+
   return (
     <Nav
       defaultActiveKey={HOME_ROUTE}
@@ -46,11 +50,8 @@ export const SideNav = () => {
 
           return <Nav.Link
             key={title}
-            className={navigationPaths[currentNav].path === path ? "active" : EMPTY_STRING}
-            onClick={() => {
-              setCurrentNav(index);
-              return navigate(path);
-            }}
+            className={`${navigationPaths[currentNav].path === path && "active"}`}
+            onClick={() => handleNavigateRoute(index)}
           >
             {title}
           </Nav.Link>

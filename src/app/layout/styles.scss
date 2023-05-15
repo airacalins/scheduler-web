@@ -1,8 +1,8 @@
 :root {
     --lightPrimary: #edf6f9;
-    --primary: #14213d;
-    --primaryButtonHover: #1d3557;
-    --secondary: #ee9b00;
+    --primary: #023047;
+    --primaryButtonHover: #0d1b2a;
+    --secondary: #ffb703;
     --white: white;
     --font-family: 'Poppins', sans-serif;
 }
@@ -18,25 +18,34 @@
     background-color: var(--primary);
     display: flex;
     flex-direction: column;
+
+    p {
+        color: var(--secondary);
+        padding: 4px 16px;
+        font-family: 'Pacifico', cursive;
+        height: 32px;
+    }
 }
 
-a.nav-link {
-    color: white;
-    padding: 16px;
-    margin-left: 16px;
+a {
+    &.nav-link {
+        color: white;
+        padding: 16px;
+        margin-left: 16px;
 
-    &.active {
-        background-color: white;
-        color: var(--primary);
-        border-radius: 8px 0px 0px 8px;
+        &.active {
+            background-color: white;
+            color: var(--primary);
+            border-radius: 8px 0px 0px 8px;
+
+            &:hover {
+                color: var(--primary);
+            }
+        }
 
         &:hover {
-            color: var(--primary);
+            color: var(--secondary);
         }
-    }
-
-    &:hover {
-        color: var(--secondary);
     }
 }
 
@@ -85,7 +94,7 @@ input[type=tel].form-control {
 
     &:focus {
         background-color: var(--lightPrimary);
-        border: 1px solid #14213d;
+        border: 1px solid #023047;
         box-shadow: none;
     }
 
